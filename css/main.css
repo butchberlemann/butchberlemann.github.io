@@ -1,9 +1,3 @@
-#viewDiv {
-      padding: 0;
-      margin: 0;
-      height: 100%;
-      width: 100%;
-}
 body {
     margin: 60px auto;
     width: 70%;
@@ -46,4 +40,10 @@ ul.posts {
 
 ul.posts li {
     list-style: none;
+}
+
+#map {
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
