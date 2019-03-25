@@ -3,37 +3,21 @@ layout: default
 title: Butch Berlemann Spatial EAM Developer
 ---
 <div class="blurb">
-			    
+				    
 <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
 <script src="https://js.arcgis.com/3.27/"></script>
-
-<h1>Locate Esri Map</h1>
+	
+<h1>Sign In Map</h1>
 	<script>
-	    var map; 
-
-	    require([
-	      "esri/map", 
-	      "esri/dijit/LocateButton",
-	      "dojo/domReady!"
-	    ], function(
-	      Map, LocateButton
-	    )  {
-
-	      map = new Map("map", {
-		center: [-56.049, 38.485],
-		zoom: 3,
-		basemap: "streets"
-	      });
-
-	      geoLocate = new LocateButton({
-		map: map
-	      }, "LocateButton");
-	      geoLocate.startup();
-
-	    });
+		var map;
+		require(["esri/map", "dojo/domReady!"], function(Map) {
+		map = new Map("map", {
+			basemap: "topo",  //For full list of pre-defined basemaps, navigate to http://arcg.is/1JVo6Wd
+			center: [-122.45, 37.75], // longitude, latitude
+			zoom: 13
+			});
+		});
 	</script>
-
+	
 </div><!-- /.blurb -->
-  <div id="map" class="map">
-    <div id="LocateButton"></div>
-  </div>
+<div id="map"></div>
