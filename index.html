@@ -8,19 +8,40 @@ title: Butch Berlemann Spatial EAM Developer
 	
 </div><!-- /.blurb -->
 
- <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
-			    <script src="https://js.arcgis.com/3.27/"></script>
+<link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+<script src="https://js.arcgis.com/4.10/"></script>
 	
-	<h1>Basic Esri Map</h1>
-				    <script>
-			      var map;
-			      require(["esri/map", "dojo/domReady!"], function(Map) {
-				map = new Map("map", {
-				  basemap: "topo",  //For full list of pre-defined basemaps, navigate to http://arcg.is/1JVo6Wd
-				  center: [-122.45, 37.75], // longitude, latitude
-				  zoom: 13
-				});
-			      });
-			    </script>
+	<h1>Welcome </h1>
+	<script>
+		require([
+		      "esri/widgets/Track",
+		      "esri/views/MapView",
+		      "esri/Map"
+		    ], function( Track, MapView, Map ) {
+
+		      var map = new Map({
+			basemap: "topo"
+		      });
+
+		      var view = new MapView({
+			map: map,
+			container: "viewDiv"
+		      });
+
+		      // Create an instance of the Track widget
+		      // and add it to the view's UI
+		      var track = new Track({
+			view: view
+		      });
+		      view.ui.add(track, "top-left");
+
+		      // The sample will start tracking your location
+		      // once the view becomes ready
+		      view.when(function() {
+			track.start();
+		      });
+		    });
+	</script>
+
 </div><!-- /.blurb -->
 <div id="map"></div>
