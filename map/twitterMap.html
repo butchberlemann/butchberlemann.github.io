@@ -17,6 +17,46 @@ title: Butch Berlemann Spatial EAM Developer
 			zoom: 13
 			});
 		});
+		map.on("load", initFunc);
+		
+		function initFunc(map) {
+			if( navigator.geolocation ) {  
+		    		navigator.geolocation.getCurrentPosition(zoomToLocation, locationError);
+		  	} else {
+		    		alert("Browser doesn't support Geolocation. Visit http://caniuse.com to see browser support for the Geolocation API.");
+		  	}
+		}
+	
+	function locationError(error) {
+          //error occurred so stop watchPosition
+          if( navigator.geolocation ) {
+            navigator.geolocation.clearWatch(watchId);
+          }
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              alert("Location not provided");
+              break;
+
+            case error.POSITION_UNAVAILABLE:
+              alert("Current location not available");
+              break;
+
+            case error.TIMEOUT:
+              alert("Timeout");
+              break;
+
+            default:
+              alert("unknown error");
+              break;
+          }
+        }
+
+        function zoomToLocation(location) {
+          var pt = new Point(location.coords.longitude, location.coords.latitude);
+          addGraphic(pt);
+          map.centerAndZoom(pt, 12);
+        }
+		
 	</script>
 	
 </div><!-- /.blurb -->
