@@ -32,7 +32,7 @@ h3 {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 
-ul li {
+li.detail {
   font-family:'Helvetica', 'Arial', 'Sans-Serif';
   margin: 5px;
 }
