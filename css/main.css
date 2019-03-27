@@ -32,32 +32,3 @@ footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
 }
-
-ul.posts { 
-    margin: 20px auto 40px; 
-    font-size: 1.5em;
-}
-
-ul.posts li {
-    list-style: none;
-}
-
-#map {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-}
-
-#viewDiv {
-      padding: 0;
-      margin: 0;
-      height: 75%;
-      width: 75%;
-    }
-
-#LocateButton {
-      padding: 0;
-      margin: 0;
-      height: 75%;
-      width: 75%;
-    }
